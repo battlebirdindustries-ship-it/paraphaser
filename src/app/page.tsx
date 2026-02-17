@@ -13,14 +13,14 @@ function Hero() {
         </span>
       </div>
       <h1 className="text-4xl md:text-[52px] font-extrabold leading-tight mx-auto max-w-[700px] tracking-tight">
-        <span className="text-white">Rewrite anything</span>
+        <span className="text-white">Free AI Writing Tools</span>
         <br />
         <span className="bg-gradient-to-r from-phaser-green via-phaser-blue to-phaser-purple bg-clip-text text-transparent">
-          at lightspeed
+          Paraphrase, Rewrite & More
         </span>
       </h1>
-      <p className="text-base text-[#8892a8] max-w-[480px] mx-auto mt-4 leading-relaxed">
-        Free AI-powered tools to paraphrase, summarize, and transform your text.
+      <p className="text-base text-[#8892a8] max-w-[520px] mx-auto mt-4 leading-relaxed">
+        Paraphrase, summarize, rewrite sentences, generate emails, ad copy, and headlines — free online, no signup required. Powered by AI.
       </p>
     </section>
   );
@@ -64,9 +64,32 @@ function ToolGrid() {
   );
 }
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "paraphaser.ai",
+  url: "https://paraphaser.ai",
+  description: "Free AI-powered writing tools to paraphrase, summarize, rewrite text, generate emails, ad copy, and headlines online. No signup required.",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  featureList: [
+    "AI Paraphrasing Tool",
+    "AI Text Summarizer",
+    "AI Email Writer",
+    "AI Ad Copy Generator",
+    "SEO Meta Description Generator",
+    "AI Headline Generator",
+  ],
+};
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero />
       <ToolGrid />
     </>

@@ -9,7 +9,7 @@ export default function Nav() {
 
   return (
     <nav className="flex items-center justify-between px-4 md:px-6 py-3 border-b border-white/[0.06] bg-[#080a14]/90 backdrop-blur-xl sticky top-0 z-50">
-      <Link href="/" className="flex items-center gap-0 no-underline shrink-0 relative">
+      <Link href="/" className="flex items-center gap-0 no-underline shrink-0 relative ml-4 md:ml-8">
         <div className="mt-1.5">
           <NavPhaserLogo size={26} />
         </div>
@@ -51,12 +51,6 @@ export default function Nav() {
         ))}
       </div>
 
-      <Link
-        href="/ai-paraphraser"
-        className="px-4 py-1.5 rounded-lg border border-[rgba(0,255,200,0.2)] text-phaser-green text-xs font-semibold no-underline hover:bg-[rgba(0,255,200,0.06)] transition-colors shrink-0"
-      >
-        Go Pro
-      </Link>
     </nav>
   );
 }

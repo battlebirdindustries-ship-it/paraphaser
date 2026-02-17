@@ -5,13 +5,13 @@ export const TOOLS: Tool[] = [
     name: "Paraphraser",
     slug: "ai-paraphraser",
     setting: "STUN",
-    desc: "Rewrite text in any tone or style",
+    desc: "Free AI text rewriter — rephrase in any tone",
     longDesc:
-      "Transform your writing instantly. Paste any text and our AI will rewrite it in your chosen tone — professional, casual, academic, or creative. Perfect for essays, emails, and content.",
+      "Free online paraphrasing tool powered by AI. Paste any text and instantly rewrite it in your chosen tone — professional, casual, academic, or creative. Our AI sentence rewriter rephrases your words while keeping the original meaning. Perfect for essays, emails, blog posts, and content. No signup required.",
     color: "#00ffc8",
-    metaTitle: "Free AI Paraphraser — Rewrite Text Instantly | paraphaser.ai",
+    metaTitle: "Free AI Paraphrasing Tool Online — Rewrite & Rephrase Text | paraphaser.ai",
     metaDesc:
-      "Paraphrase any text for free with AI. Rewrite in professional, casual, academic, or creative tones. No signup required.",
+      "Free AI paraphrasing tool to rewrite and rephrase text online. AI-powered sentence rewriter, word changer, and paragraph rephraser. Change tone instantly — no signup required.",
     sampleInput:
       "Artificial intelligence has fundamentally transformed the way businesses operate across every industry. Companies are now leveraging machine learning algorithms to analyze vast datasets, predict consumer behavior, and automate repetitive tasks that previously required significant human labor.",
     sampleOutputs: {
@@ -31,13 +31,13 @@ export const TOOLS: Tool[] = [
     name: "Summarizer",
     slug: "ai-summarizer",
     setting: "COMPRESS",
-    desc: "Condense long text into key points",
+    desc: "Free AI text summarizer — condense any document",
     longDesc:
-      "Turn lengthy articles, documents, and essays into clear, concise summaries. Our AI extracts the key points and delivers them in seconds.",
+      "Free online AI text summarizer. Paste any article, essay, document, or research paper and get a clear, concise summary in seconds. Extract key points from long content instantly. Works with any text length — perfect for students, researchers, and professionals. No signup required.",
     color: "#00b4ff",
-    metaTitle: "Free AI Text Summarizer — Condense Any Text | paraphaser.ai",
+    metaTitle: "Free AI Text Summarizer Online — Summarize Articles & Documents | paraphaser.ai",
     metaDesc:
-      "Summarize articles, essays, and documents instantly with AI. Get key points in seconds. Free, no signup required.",
+      "Free AI text summarizer tool. Summarize articles, essays, research papers, and documents online instantly. Extract key points in seconds — no signup required.",
     sampleInput:
       "The development of renewable energy sources has become one of the most critical challenges facing humanity in the 21st century. As fossil fuel reserves continue to deplete and the effects of climate change become increasingly severe, governments and private enterprises worldwide are investing billions of dollars into solar, wind, and hydroelectric power generation. Solar energy, in particular, has seen remarkable growth, with the cost of photovoltaic panels dropping by over 90% in the last decade. Wind energy has similarly expanded, with offshore wind farms now capable of powering entire cities. Despite these advances, significant challenges remain, including energy storage limitations, grid infrastructure modernization, and the political complexities of transitioning away from established fossil fuel industries.",
     sampleOutputs: {
@@ -57,13 +57,13 @@ export const TOOLS: Tool[] = [
     name: "Email Writer",
     slug: "ai-email-writer",
     setting: "TRANSMIT",
-    desc: "Generate professional emails in seconds",
+    desc: "Free AI email generator — write any email instantly",
     longDesc:
-      "Write polished, effective emails instantly. Describe what you need and our AI crafts the perfect email — from cold outreach to follow-ups, apologies to thank-yous.",
+      "Free AI email writer and generator. Describe what you need and get a polished, professional email in seconds. Perfect for cold outreach, follow-ups, thank-you notes, sales emails, and business correspondence. Choose your tone and get a ready-to-send email with subject line. No signup required.",
     color: "#7b61ff",
-    metaTitle: "Free AI Email Generator — Write Emails Instantly | paraphaser.ai",
+    metaTitle: "Free AI Email Writer & Generator Online — Write Emails Instantly | paraphaser.ai",
     metaDesc:
-      "Generate professional emails with AI. Cold outreach, follow-ups, thank-yous, and more. Free email writer, no signup.",
+      "Free AI email generator. Write professional emails instantly — cold outreach, follow-ups, thank-yous, sales emails, and more. AI email writer with no signup required.",
     sampleInput:
       "Write a follow-up email to a potential client named Sarah at TechCorp. We had a demo call last week where I showed our analytics platform. She seemed interested but mentioned budget concerns. I want to address the budget issue and suggest a pilot program.",
     sampleOutputs: {
@@ -83,13 +83,13 @@ export const TOOLS: Tool[] = [
     name: "Ad Copy",
     slug: "ai-ad-copy",
     setting: "TARGET",
-    desc: "Create high-converting ad copy",
+    desc: "Free AI ad copy generator — Google, Facebook & more",
     longDesc:
-      "Generate scroll-stopping ad copy for Google Ads, Facebook, Instagram, and more. Describe your product and get multiple variations optimized for conversions.",
+      "Free AI ad copy generator for Google Ads, Facebook Ads, Instagram, and social media. Describe your product or service and get multiple high-converting ad variations in seconds. Generate headlines, descriptions, and full ad copy optimized for clicks and conversions. No signup required.",
     color: "#ff4040",
-    metaTitle: "Free AI Ad Copy Generator — Google & Facebook Ads | paraphaser.ai",
+    metaTitle: "Free AI Ad Copy Generator — Google Ads & Facebook Ads Writer | paraphaser.ai",
     metaDesc:
-      "Generate high-converting ad copy for Google Ads, Facebook, and Instagram. Multiple variations in seconds. Free AI ad writer.",
+      "Free AI ad copy generator for Google Ads, Facebook, and Instagram. Generate high-converting ad headlines and descriptions in seconds. No signup required.",
     sampleInput:
       "Product: Noise-canceling wireless earbuds called 'SilentPods Pro'. Price: $79. Key features: 40-hour battery, active noise cancellation, IPX5 waterproof, memory foam tips. Target audience: remote workers and commuters.",
     sampleOutputs: {
@@ -109,13 +109,13 @@ export const TOOLS: Tool[] = [
     name: "SEO Meta",
     slug: "ai-seo-meta",
     setting: "SCAN",
-    desc: "Generate optimized meta descriptions",
+    desc: "Free AI meta description & title tag generator",
     longDesc:
-      "Create SEO-optimized meta titles and descriptions that boost click-through rates. Enter your page topic and get multiple variations ready to paste into your CMS.",
+      "Free AI-powered SEO meta description generator. Enter your page topic and get optimized meta titles and descriptions that boost click-through rates in Google search results. Generate multiple variations ready to paste into WordPress, Shopify, or any CMS. No signup required.",
     color: "#ffb800",
-    metaTitle: "Free AI Meta Description Generator — SEO Tool | paraphaser.ai",
+    metaTitle: "Free AI Meta Description Generator — SEO Title & Description Tool | paraphaser.ai",
     metaDesc:
-      "Generate SEO-optimized meta titles and descriptions with AI. Boost your click-through rates. Free SEO meta tag generator.",
+      "Free AI meta description generator. Create SEO-optimized meta titles and descriptions that boost Google click-through rates. Generate meta tags instantly — no signup required.",
     sampleInput:
       "Page about: Best budget laptops for college students in 2026. The article reviews 10 laptops under $600 with pros and cons for each. Covers brands like Lenovo, HP, Acer, and ASUS.",
     sampleOutputs: {
@@ -135,13 +135,13 @@ export const TOOLS: Tool[] = [
     name: "Headlines",
     slug: "ai-headlines",
     setting: "BLAST",
-    desc: "Generate catchy, click-worthy headlines",
+    desc: "Free AI headline & blog title generator",
     longDesc:
-      "Create irresistible headlines for blog posts, articles, and social media. Enter your topic and get 10 headline variations optimized for engagement.",
+      "Free AI headline generator for blog posts, articles, YouTube videos, and social media. Enter your topic and get 10 catchy, click-worthy headline variations optimized for engagement and CTR. Perfect for content creators, bloggers, and marketers. No signup required.",
     color: "#ff4ecb",
-    metaTitle: "Free AI Headline Generator — Blog & Article Titles | paraphaser.ai",
+    metaTitle: "Free AI Headline Generator — Blog Titles & Article Headlines | paraphaser.ai",
     metaDesc:
-      "Generate catchy headlines and blog titles with AI. Get 10 click-worthy headline variations in seconds. Free headline generator.",
+      "Free AI headline generator. Get 10 catchy blog titles, article headlines, and social media hooks in seconds. Click-worthy headlines powered by AI — no signup required.",
     sampleInput:
       "Topic: How remote workers can stay productive and avoid burnout while working from home",
     sampleOutputs: {
