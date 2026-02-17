@@ -13,14 +13,14 @@ function Hero() {
         </span>
       </div>
       <h1 className="text-4xl md:text-[52px] font-extrabold leading-tight mx-auto max-w-[700px] tracking-tight">
-        <span className="text-white">Free AI Writing Tools</span>
+        <span className="text-white">Free&nbsp;AI&nbsp;Writing&nbsp;Tools</span>
         <br />
         <span className="bg-gradient-to-r from-phaser-green via-phaser-blue to-phaser-purple bg-clip-text text-transparent">
           Paraphrase, Rewrite & More
         </span>
       </h1>
       <p className="text-base text-[#8892a8] max-w-[520px] mx-auto mt-4 leading-relaxed">
-        Paraphrase, summarize, rewrite sentences, generate emails, ad copy, and headlines — free online, no signup required. Powered by AI.
+        Paraphrase, summarize, rewrite sentences, generate emails, ad copy, and headlines — free online. Powered by AI.
       </p>
     </section>
   );
