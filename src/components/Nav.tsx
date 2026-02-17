@@ -35,7 +35,7 @@ export default function Nav() {
         </span>
       </Link>
 
-      <div className="hidden lg:flex items-center gap-0.5 mx-4">
+      <div className="hidden lg:flex items-center justify-center gap-0.5 flex-1 mx-4">
         {TOOLS.map((tool) => (
           <Link
             key={tool.slug}

@@ -26,9 +26,6 @@ export const TOOLS: Tool[] = [
       Simplified:
         "AI is changing how businesses work. Companies use smart computer programs to look at lots of information, understand what customers want, and do routine work automatically.",
     },
-    affiliateName: "QuillBot Pro",
-    affiliateDesc: "Advanced AI rewriting with 8 modes and no word limit.",
-    affiliateCta: "Try QuillBot Free →",
   },
   {
     name: "Summarizer",
@@ -55,9 +52,6 @@ export const TOOLS: Tool[] = [
       Simplified:
         "Renewable energy like solar and wind power is growing fast. Solar panels are 90% cheaper now. Wind farms can power whole cities. But we still need better ways to store energy and update our power systems.",
     },
-    affiliateName: "TLDR This Pro",
-    affiliateDesc: "Summarize entire web pages, PDFs, and documents instantly.",
-    affiliateCta: "Try TLDR This →",
   },
   {
     name: "Email Writer",
@@ -84,9 +78,6 @@ export const TOOLS: Tool[] = [
       Simplified:
         "Subject: Following up on our call\n\nHi Sarah,\n\nThanks for meeting with me last week. I know budget is a concern.\n\nI'd like to offer a free 30-day trial of our analytics platform. No commitment needed. We'll help set everything up.\n\nWould you like to chat about it this week?\n\nThanks!",
     },
-    affiliateName: "Lavender AI",
-    affiliateDesc: "AI email coach that helps you write better emails that get replies.",
-    affiliateCta: "Try Lavender Free →",
   },
   {
     name: "Ad Copy",
@@ -113,9 +104,6 @@ export const TOOLS: Tool[] = [
       Simplified:
         "GOOGLE ADS:\n\nHeadline 1: SilentPods Pro Earbuds — Only $79\nHeadline 2: Block Noise. 40-Hour Battery.\nHeadline 3: Wireless Earbuds | Waterproof\nDescription: Noise-canceling earbuds with 40-hour battery. Waterproof and comfortable. Great for work and travel. $79.\n\nFACEBOOK AD:\n\nNeed quiet while you work?\n\nSilentPods Pro blocks outside noise. Battery lasts 40 hours. Waterproof and super comfortable.\n\nOnly $79. Free shipping.\n\nGet yours now →",
     },
-    affiliateName: "Jasper AI",
-    affiliateDesc: "Enterprise AI for marketing teams. Generate ads, copy, and content at scale.",
-    affiliateCta: "Try Jasper Free →",
   },
   {
     name: "SEO Meta",
@@ -142,9 +130,6 @@ export const TOOLS: Tool[] = [
       Simplified:
         "META TITLE OPTIONS:\n\n1. 10 Best Cheap Laptops for College Students 2026\n2. Good College Laptops Under $600 — 2026 Guide\n3. Affordable Student Laptops 2026: Top 10 Picks\n\nMETA DESCRIPTIONS:\n\n1. Find the best laptop for college under $600. We reviewed 10 popular laptops from Lenovo, HP, Acer, and ASUS for students in 2026. (145 chars)\n\n2. Need a good laptop for school? See our list of 10 affordable laptops under $600. Easy-to-read reviews with pros and cons. (122 chars)",
     },
-    affiliateName: "SurferSEO",
-    affiliateDesc: "AI-powered SEO tool for content optimization and keyword research.",
-    affiliateCta: "Try Surfer Free →",
   },
   {
     name: "Headlines",
@@ -171,9 +156,6 @@ export const TOOLS: Tool[] = [
       Simplified:
         "HEADLINE OPTIONS:\n\n1. 12 Simple Tips for Working From Home Without Getting Tired\n2. How to Stay Focused When Working From Home\n3. A Simple Guide to Remote Work Productivity\n4. Working From Home: How to Get More Done and Feel Better\n5. Easy Ways to Be More Productive at Home\n6. Don't Let Working From Home Wear You Out: 10 Tips\n7. How to Work From Home and Still Have Energy\n8. Remote Work Made Easy: A Beginner's Guide to Productivity\n9. Simple Habits That Make Working From Home Better\n10. How to Avoid Burnout When You Work Remotely",
     },
-    affiliateName: "CoSchedule Headline Analyzer",
-    affiliateDesc: "Score your headlines and get data-driven suggestions to improve CTR.",
-    affiliateCta: "Try CoSchedule →",
   },
 ];
 

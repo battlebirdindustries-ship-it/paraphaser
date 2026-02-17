@@ -11,9 +11,6 @@ export interface Tool {
   metaDesc: string;
   sampleInput: string;
   sampleOutputs: Record<Tone, string>;
-  affiliateName: string;
-  affiliateDesc: string;
-  affiliateCta: string;
 }
 
 export const TONES: Tone[] = ["Professional", "Casual", "Academic", "Creative", "Simplified"];
