@@ -8,8 +8,8 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center justify-between px-4 md:px-6 py-3 border-b border-white/[0.06] bg-[#080a14]/90 backdrop-blur-xl sticky top-0 z-50">
-      <Link href="/" className="flex items-center gap-0 no-underline shrink-0 relative ml-4 md:ml-8">
+    <nav className="relative flex items-center px-4 md:px-8 lg:px-12 py-3 border-b border-white/[0.06] bg-[#080a14]/90 backdrop-blur-xl sticky top-0 z-50">
+      <Link href="/" className="flex items-center gap-0 no-underline shrink-0 relative">
         <div className="mt-1.5">
           <NavPhaserLogo size={26} />
         </div>
@@ -35,7 +35,7 @@ export default function Nav() {
         </span>
       </Link>
 
-      <div className="hidden lg:flex items-center justify-center gap-0.5 flex-1 mx-4">
+      <div className="hidden lg:flex items-center justify-center gap-0.5 absolute left-1/2 -translate-x-1/2">
         {TOOLS.map((tool) => (
           <Link
             key={tool.slug}
