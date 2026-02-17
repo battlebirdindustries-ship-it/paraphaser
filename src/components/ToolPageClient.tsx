@@ -1,29 +1,19 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { Tool, TONES, Tone } from "@/types";
 import { TOOLS } from "@/lib/tools";
 import PhaserLogo from "./PhaserLogo";
 import MiniPhaser from "./MiniPhaser";
-import AdBanner from "./AdBanner";
-import AffiliateBox from "./AffiliateBox";
 
-function PhaserBeam({ active, onComplete }: { active: boolean; onComplete: () => void }) {
-  const [pct, setPct] = useState(0);
-
-  if (active && pct === 0) {
-    setTimeout(() => setPct(100), 60);
-    setTimeout(() => { onComplete(); setPct(0); }, 1800);
-  }
-  if (!active && pct > 0) setPct(0);
-  if (!active && pct === 0) return null;
-
+function PhaserBeam({ active }: { active: boolean }) {
+  if (!active) return null;
   return (
     <div className="relative h-1 my-4 rounded bg-[rgba(0,255,200,0.06)] overflow-hidden">
       <div
-        className="absolute top-0 left-0 h-full rounded transition-all duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+        className="absolute top-0 left-0 h-full rounded animate-pulse"
         style={{
-          width: `${pct}%`,
+          width: "100%",
           background: "linear-gradient(90deg, #00ffc8, #00b4ff, #7b61ff)",
           boxShadow: "0 0 20px rgba(0,255,200,0.25)",
         }}
@@ -37,19 +27,54 @@ export default function ToolPageClient({ tool }: { tool: Tool }) {
   const [output, setOutput] = useState("");
   const [firing, setFiring] = useState(false);
   const [selectedTone, setSelectedTone] = useState<Tone>("Professional");
-  const [useCount, setUseCount] = useState(0);
+  const [error, setError] = useState("");
+  const abortRef = useRef<AbortController | null>(null);
 
-  const handleFire = () => {
+  const handleFire = async () => {
     if (!input.trim() || firing) return;
     setFiring(true);
     setOutput("");
-  };
+    setError("");
 
-  const handleBeamComplete = useCallback(() => {
-    setFiring(false);
-    setOutput(tool.sampleOutputs[selectedTone] || tool.sampleOutputs.Professional);
-    setUseCount((c) => c + 1);
-  }, [tool, selectedTone]);
+    abortRef.current = new AbortController();
+
+    try {
+      const res = await fetch("/api/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: input, tool: tool.slug, tone: selectedTone }),
+        signal: abortRef.current.signal,
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({ error: "Generation failed" }));
+        throw new Error(data.error || "Generation failed");
+      }
+
+      const reader = res.body?.getReader();
+      if (!reader) throw new Error("No response stream");
+
+      const decoder = new TextDecoder();
+      let result = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+        result += chunk;
+        setOutput(result);
+      }
+    } catch (err: unknown) {
+      if (err instanceof Error && err.name === "AbortError") return;
+      const message = err instanceof Error ? err.message : "Something went wrong";
+      setError(message);
+      // Fallback to sample output if API fails
+      setOutput(tool.sampleOutputs[selectedTone] || tool.sampleOutputs.Professional);
+    } finally {
+      setFiring(false);
+      abortRef.current = null;
+    }
+  };
 
   const otherTools = TOOLS.filter((t) => t.slug !== tool.slug).slice(0, 3);
 
@@ -70,10 +95,7 @@ export default function ToolPageClient({ tool }: { tool: Tool }) {
           AI {tool.name}
         </h1>
         <p className="text-sm text-[#8892a8] mb-1">{tool.longDesc}</p>
-        <p className="text-xs text-[#4a5068]">Free — no signup required</p>
       </div>
-
-      <AdBanner />
 
       {/* Tone selector */}
       <div className="flex gap-2 mt-5 mb-3.5 flex-wrap">
@@ -110,7 +132,7 @@ export default function ToolPageClient({ tool }: { tool: Tool }) {
         <div className="bg-[rgba(15,20,35,0.8)] border border-white/[0.06] rounded-2xl overflow-hidden">
           <div className="px-4 py-2.5 border-b border-white/[0.06] flex justify-between items-center">
             <span className="text-[11px] font-semibold text-[#4a5068] tracking-wider">OUTPUT</span>
-            {output && (
+            {output && !firing && (
               <button
                 onClick={() => navigator.clipboard?.writeText(output)}
                 className="text-[10px] font-mono font-semibold text-phaser-green bg-[rgba(0,255,200,0.06)] border border-[rgba(0,255,200,0.25)] rounded-md px-2.5 py-1 cursor-pointer"
@@ -125,10 +147,16 @@ export default function ToolPageClient({ tool }: { tool: Tool }) {
         </div>
       </div>
 
-      <PhaserBeam active={firing} onComplete={handleBeamComplete} />
+      <PhaserBeam active={firing} />
+
+      {error && (
+        <div className="text-[11px] text-[#ff4040] font-mono text-center mb-2">
+          {error} — showing sample output
+        </div>
+      )}
 
       {/* Fire button */}
-      <div className="text-center mb-7">
+      <div className="flex justify-end mt-5 mb-7">
         <button
           onClick={handleFire}
           disabled={firing}
@@ -142,13 +170,7 @@ export default function ToolPageClient({ tool }: { tool: Tool }) {
         >
           {firing ? "⚡ FIRING..." : `⚡ FIRE — ${selectedTone}`}
         </button>
-        <div className="mt-2.5 text-[11px] font-mono text-[#4a5068]">
-          {useCount > 0 ? `${useCount} shot${useCount > 1 ? "s" : ""} fired this session` : "Free to use — no limits"}
-        </div>
       </div>
-
-      <AffiliateBox tool={tool} />
-      <div className="mt-5"><AdBanner label="[ AD — 300×250 RECTANGLE ]" /></div>
 
       {/* SEO content */}
       <div className="mt-9 p-6 rounded-2xl bg-[rgba(0,255,200,0.04)] border border-white/[0.06]">
